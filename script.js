@@ -3,11 +3,11 @@ const search = document.getElementById('search');
 const result = document.getElementById('result');
 const more = document.getElementById('more');
 
-const apiURL = 'https://api.lyrics.ovh';
+const apiURL = 'https://genius.p.rapidapi.com';
 
 // Search by song or artist
 async function searchSongs(term) {
-  const res = await fetch(`${apiURL}/suggest/${term}`);
+  const res = await fetch(`${apiURL}/search/${term}`);
   const data = await res.json();
 
   showData(data);
@@ -48,7 +48,7 @@ function showData(data) {
 
 // Get prev and next songs
 async function getMoreSongs(url) {
-  const res = await fetch(`https://cors-anywhere.herokuapp.com/${url}`);
+  const res = await fetch(`https://genius.p.rapidapi.com/songs/${url}`);
   const data = await res.json();
 
   showData(data);
@@ -56,7 +56,7 @@ async function getMoreSongs(url) {
 
 // Get lyrics for song
 async function getLyrics(artist, songTitle) {
-  const res = await fetch(`${apiURL}/v1/${artist}/${songTitle}`);
+  const res = await fetch(`${apiURL}/${artist}/${songTitle}`);
   const data = await res.json();
 
    if (data.error) {
