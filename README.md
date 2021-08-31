@@ -1,5 +1,5 @@
 # lyrical-search-api-app
-This web application allows you to find songs, artists and lyrics using the https://lyrics.ovh API
+This web application allows you to find songs, artists and lyrics using the https://rapidapi.com/brianiswu/api/genius/ API
 
 # Project Specifications
 Display UI with song/artist input.
